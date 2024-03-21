@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert(`you choose ${res}`);" class="a">Rock</button>
+    <button onclick="alert(`you choose ${res}`);" class="a">Paper</button>
+    <button onclick="alert(`you tie ${res}`);" class="a">Scissor</button>
+    <script>
+        alert('hello');
+        let res='';
+        res=pick();
+        function pick(){
+            const c = pickcmp();
+            if(c==='rock'){
+              res='Lose';
+            } else if(c==='paper'){
+               res='Win';
+            }
+            else if(c==='scissors'){
+              res='tie';
+            }
+            return res;
+        }
+        
+       
+        console.log(randomnum);
+        function pickcmp(){
+            const randomnum=Math.random();
+            let computermove='';
+            if(randomnum>=0 && randomnum<1/3){
+                computermove='rock';
+            }else if(randomnum>=1 && randomnum<2/3){
+                computermove='paper';
+            }else if(randomnum>=2/3 && randomnum<1){
+                computermove='scissors';
+            }
+            return computermove;
+        }
+    </script>
+</body>
+</html>
