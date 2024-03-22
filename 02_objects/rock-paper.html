@@ -6,39 +6,64 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="alert(`you choose ${res}`);" class="a">Rock</button>
-    <button onclick="alert(`you choose ${res}`);" class="a">Paper</button>
-    <button onclick="alert(`you tie ${res}`);" class="a">Scissor</button>
+    <button onclick="pick();" class="a">Rock</button>
+    <button onclick="pick();" class="a">Paper</button>
+    <button onclick="pick();" class="a">Scissor</button>
+    <p>Win: <span class="w" onclick="show();">0</span>&nbsp;&nbsp;  Losses: <span class="l" onclick="const b=document.querySelector('.l');b.innerHTML=c2;"></span> &nbsp;&nbsp; Tie: <span class="t" onclick="t.innerHTML=c3;"></span> </p>
     <script>
-        alert('hello');
         let res='';
-        res=pick();
+        var randomnum=0.0;
+        var c1=0;
+        var c2=0;
+        var c3=0;
+        var a;
         function pick(){
-            const c = pickcmp();
+            var c = pickcmp();
             if(c==='rock'){
               res='Lose';
+              c2++;
+              console.log(c2);
             } else if(c==='paper'){
                res='Win';
+               c1++;
+               console.log(c1);
             }
             else if(c==='scissors'){
               res='tie';
+              c3++;
+              console.log(c3);
             }
-            return res;
+            console.log(res);
         }
         
        
-        console.log(randomnum);
+        
         function pickcmp(){
-            const randomnum=Math.random();
+            randomnum=Math.random();
+            console.log(randomnum);
             let computermove='';
             if(randomnum>=0 && randomnum<1/3){
                 computermove='rock';
-            }else if(randomnum>=1 && randomnum<2/3){
+            }else if(randomnum>=1/3 && randomnum<2/3){
                 computermove='paper';
             }else if(randomnum>=2/3 && randomnum<1){
                 computermove='scissors';
             }
             return computermove;
+        }
+        function show(){
+            if (res==='win'){
+                a=document.querySelector('.w');
+                w.innerHTML=c1;
+            }
+            else if(res==='lose'){
+                a=document.querySelector('.l');
+                l.innerHTML=c2;
+            }
+            else if(res==='tie'){
+                a=document.querySelector('.t');
+                t.innerHTML=c3;
+            }
         }
     </script>
 </body>
