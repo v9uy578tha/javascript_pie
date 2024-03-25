@@ -25,28 +25,24 @@
               res='Lose';
               score.c2++;
               s1.c2++;
-              console.log(score.c2);
             } else if(c==='paper'){
                res='Win';
                score.c1++;
                s1.c1++;
-               console.log(score.c1);
+               
             }
             else if(c==='scissors'){
               res='tie';
               score.c3++;
               s1.c3++;
-              console.log(score.c3);
+              
             }
-            console.log(res);
-            console.log(s1);
         }
         
         localStorage.setItem('mes3',JSON.stringify(score));
         var s1=JSON.parse(localStorage.getItem('mes3'));
         function pickcmp(){
             randomnum=Math.random();
-            console.log(randomnum);
             let computermove='';
             if(randomnum>=0 && randomnum<1/3){
                 computermove='rock';
