@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="pick();show;" class="a">Rock</button>
-    <button onclick="pick();" class="a">Paper</button>
-    <button onclick="pick();" class="a">Scissor</button>
+    <button onclick="pick();show();" class="a">Rock</button>
+    <button onclick="pick();show()" class="a">Paper</button>
+    <button onclick="pick();show()" class="a">Scissor</button>
     <p class="js-score"></p>
     <script>
         let res='';
@@ -58,7 +58,7 @@
             return computermove;
         }
         function show(){
-            document.querySelector('.js-score').innerHTML =  `wins:${s1.c1},loss:${s1.c1},tie:${s1.c3}`;
+            document.querySelector('.js-score').innerHTML =  `wins:${s1.c1},loss:${s1.c2},tie:${s1.c3}`;
         }
     </script>
 </body>
