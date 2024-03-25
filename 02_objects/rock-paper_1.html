@@ -9,6 +9,8 @@
     <button onclick="pick();show();" class="a">Rock</button>
     <button onclick="pick();show()" class="a">Paper</button>
     <button onclick="pick();show()" class="a">Scissor</button>
+    <button onclick="reset();show_res();" class="a">Reset</button>
+    <p class="resul"></p>
     <p class="js-score"></p>
     <script>
         let res='';
@@ -22,17 +24,17 @@
         function pick(){
             var c = pickcmp();
             if(c==='rock'){
-              res='Lose';
+              res=' You Lose';
               score.c2++;
               s1.c2++;
             } else if(c==='paper'){
-               res='Win';
+               res='You Win';
                score.c1++;
                s1.c1++;
                
             }
             else if(c==='scissors'){
-              res='tie';
+              res='Its tie';
               score.c3++;
               s1.c3++;
               
@@ -53,7 +55,17 @@
             }
             return computermove;
         }
+        function reset(){
+            s1.c1=0;
+            s1.c2=0;
+            s1.c3=0;
+        }
         function show(){
+            document.querySelector('.resul').innerHTML=`${res}`;
+            document.querySelector('.js-score').innerHTML =  `wins:${s1.c1},loss:${s1.c2},tie:${s1.c3}`;
+        }
+        function show_res(){
+            document.querySelector('.resul').innerHTML=`Reset Successful`;
             document.querySelector('.js-score').innerHTML =  `wins:${s1.c1},loss:${s1.c2},tie:${s1.c3}`;
         }
     </script>
