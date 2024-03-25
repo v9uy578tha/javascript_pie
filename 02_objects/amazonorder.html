@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amazon Shipping Calulator</p>
+    <p>Orders under $40 = +$10 shopping</p>
+    <p>Orders over $40 = FREE Shipping</p>
+    <input placeholder="Cost" class="inp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="clic()">Calculate</button>
+    <p>Your total bill is:</p><span class="total"></span>
+    <script>
+        
+        function clic(){
+            var b=Number(document.querySelector('.inp').value);
+            var res=0;
+            if(b>40){
+              res=b;
+            }
+            else{
+                res=b+10;
+            }
+            document.querySelector('.total').innerHTML=res;
+        }
+        
+    </script>
+</body>
+</html>
